@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>top-news</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size=12 size-lg=3 size-md=4 size-sm=6 size-xs=12 *ngFor="let item of news[0]?.articles">
+        <ion-card>
+          <img *ngIf="item.urlToImage" [src]="item.urlToImage"/>
+          <ion-card-header>
+            <ion-card-subtitle>{{item.source.id}}</ion-card-subtitle>
+            <ion-card-title class="test">{{item.title}} </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+          {{item.content}}      
+          </ion-card-content>
+        </ion-card>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
